@@ -40,11 +40,10 @@ function stripArabicArticle(name: string): string {
  *   getInitials("خليل أحمد", "الرشيد") // → "رخ"
  */
 export function getInitials(firstName: string, lastName: string): string {
-  const lastInitial = stripArabicArticle(lastName.trim())[0] ?? "";
   const firstWord = firstName.trim().split(/\s+/)[0] ?? "";
   const firstInitial = stripArabicArticle(firstWord)[0] ?? "";
-  // Return in RTL-natural order: family name initial first
-  return `${lastInitial}${firstInitial}`;
+  const lastInitial = stripArabicArticle(lastName.trim())[0] ?? "";
+  return `${firstInitial}${lastInitial}`;
 }
 
 // ---------------------------------------------------------------------------
@@ -149,8 +148,9 @@ export function filterStudents(
   const lower = trimmed.toLowerCase();
 
   return students.filter((s) => {
-    const fullName = `${s.firstName} ${s.lastName}`.toLowerCase();
-    return fullName.includes(lower);
+    const firstLast = `${s.firstName} ${s.lastName}`.toLowerCase();
+    const lastFirst = `${s.lastName} ${s.firstName}`.toLowerCase();
+    return firstLast.includes(lower) || lastFirst.includes(lower);
   });
 }
 

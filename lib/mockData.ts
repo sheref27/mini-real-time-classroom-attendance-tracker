@@ -2,8 +2,15 @@
  * Mock data for the classroom attendance session.
  *
  * Exactly the 8 students specified in the technical assessment.
- * Names are preserved as provided; "عبدهللا" in student 4 is
- * corrected to the standard spelling "عبدالله".
+ * Displayed in natural Arabic name order (First, Middle, Family):
+ *   1. أحمد خليل الرشيد
+ *   2. سارة محمد العتيبي
+ *   3. عمر خالد الدوسري
+ *   4. مريم عبدهللا الغامدي
+ *   5. ياسين طارق القحطاني
+ *   6. فاطمة حسن الشهراني
+ *   7. زياد فهد المطيري
+ *   8. نورة سعد السبيعي
  *
  * MOCK_INITIAL_STATUSES seeds the first render of the session —
  * it is intentionally kept separate from the Student model so
@@ -30,49 +37,49 @@ export const MOCK_CLASS_INFO: ClassInfo = {
 export const MOCK_STUDENTS: Student[] = [
   {
     id: "1",
-    firstName: "خليل أحمد",
+    firstName: "أحمد خليل",
     lastName: "الرشيد",
     cumulativeAbsenceRate: 5,
   },
   {
     id: "2",
-    firstName: "محمد سارة",
+    firstName: "سارة محمد",
     lastName: "العتيبي",
     cumulativeAbsenceRate: 20,
   },
   {
     id: "3",
-    firstName: "خالد عمر",
+    firstName: "عمر خالد",
     lastName: "الدوسري",
     cumulativeAbsenceRate: 0,
   },
   {
     id: "4",
-    firstName: "عبدالله مريم",
+    firstName: "مريم عبدهللا",
     lastName: "الغامدي",
     cumulativeAbsenceRate: 18,
   },
   {
     id: "5",
-    firstName: "طارق ياسين",
+    firstName: "ياسين طارق",
     lastName: "القحطاني",
     cumulativeAbsenceRate: 8,
   },
   {
     id: "6",
-    firstName: "حسن فاطمة",
+    firstName: "فاطمة حسن",
     lastName: "الشهراني",
     cumulativeAbsenceRate: 25,
   },
   {
     id: "7",
-    firstName: "فهد زياد",
+    firstName: "زياد فهد",
     lastName: "المطيري",
     cumulativeAbsenceRate: 2,
   },
   {
     id: "8",
-    firstName: "سعد نورة",
+    firstName: "نورة سعد",
     lastName: "السبيعي",
     cumulativeAbsenceRate: 12,
   },
@@ -84,12 +91,12 @@ export const MOCK_STUDENTS: Student[] = [
 // ---------------------------------------------------------------------------
 
 export const MOCK_INITIAL_STATUSES: Record<string, AttendanceStatus> = {
-  "1": "present", // الرشيد خليل أحمد
-  "2": "absent",  // العتيبي محمد سارة
-  "3": "present", // الدوسري خالد عمر
-  "4": "late",    // الغامدي عبدالله مريم
-  "5": "present", // القحطاني طارق ياسين
-  "6": "absent",  // الشهراني حسن فاطمة
-  "7": "present", // المطيري فهد زياد
-  "8": "present", // السبيعي سعد نورة
+  "1": "present", // أحمد خليل الرشيد
+  "2": "absent",  // سارة محمد العتيبي
+  "3": "present", // عمر خالد الدوسري
+  "4": "late",    // مريم عبدهللا الغامدي
+  "5": "present", // ياسين طارق القحطاني
+  "6": "absent",  // فاطمة حسن الشهراني
+  "7": "present", // زياد فهد المطيري
+  "8": "present", // نورة سعد السبيعي
 };
